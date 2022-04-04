@@ -1,0 +1,128 @@
+:root {
+    background: linear-gradient(0deg, rgba(19,41,61,1) 0%, rgba(237,245,249,1) 63%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+}
+.title {
+    text-align: center;
+    font-size: 60px;
+    text-shadow: 2px 2px 2px rgba(73, 160, 120, 0.954);
+    
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 40px;
+    margin: 0;
+    padding: 2rem;
+
+  }
+
+.highScores {
+  float: left;
+  color: teal;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.timer {
+    float: right;
+    color: teal;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+#introDesc {
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.start-button {
+    background: radial-gradient(circle, rgb(240, 140, 223) 0%, rgba(73, 160, 120, 0.954) 100%);
+    border-radius: 8px;
+    color: #13293d;
+    cursor: pointer;
+    font-size: 2em;
+    letter-spacing: 0.21px;
+    line-height: 10px;
+    max-width: 255px;
+    padding: 20px 44px;
+    text-align: center;
+    transition-duration: 0.15s;
+    transition-property: background-color;
+    transition-timing-function: linear;
+}
+
+.quiz-page {
+    display: hidden;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* MUST HAVE:
+-----------
+setInterval to do a countdown
+dom manipulation
+localStorage
+JSON.parse and JSON.stringify
+
+
+MAY WANT TO USE:
+----------------
+data-* attributes
+creating elements
+using objects in an array
+event bubbling and event delegation
+
+
+
+- How might these techniques apply to the homework?
+- How can we simplify the homework?
+
+
+What are the edges of this puzzle?
+
+PIECES:
+-------
+- html for start screen including a start button
+- styles for start screen
+- style a question and choices
+- style the high scores
+- start coundown when start button is clicked
+- show first question when start button is clicked
+- timer countdown
+- show first question
+- show next question
+- handle last question
+- get user's answer to a question
+- check user's answer
+- prompt user for initials
+- update time when user answers incorrectly
+- display high scores
+- display high scores in descending order by score
+- save high scores in local storage
+- get high scores from local storage */
