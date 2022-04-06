@@ -1,40 +1,39 @@
-var timeEl = document.querySelector(".timer")
-const quizQuestions = [
+var timeEl = document.querySelector(".timer");
+var startButton = document.querySelector(".start-button");
+
+
+
+var quizQuestions = [
     {
-    question: "How do you create a timer?",
-    answers: {
-        a: "setTimer",
-        b: "setTimeout",
-        c: "setInterval",
-        d: "setIntervalTime"
-    },
-    correctAnswer: "c"
+    "question": "How do you create a timer?",
+        "a": "setTimer",
+        "b": "setTimeout",
+        "c": "setInterval",
+        "d": "setIntervalTime",
+    "correctAnswer": "c"
 
 },
 {
-    question: "Where do you correctly insert your Javascript in the HTML document?",
-    answers: {
-        a: "header section",
-        b: "body section",
-        c: "main section",
-        d: "under css link"
-    },
-    correctAnswer: "b"
+    "question": "Where do you correctly insert your Javascript in the HTML document?",
+        "a": "header section",
+        "b": "body section",
+        "c": "main section",
+        "d": "under css link",
+    "correctAnswer": "b"
 },
 {
-    question: "How do you write 'Hello World' in an alert box?",
-    answers: {
-        a: "alert('Hello World');",
-        b: "msgBox('Hello World');",
-        c: "msg('Hello World');",
-        d: "alertBox('Hello World');",
-    },
-    correctAnswer: "a"
+    "question": "How do you write 'Hello World' in an alert box?",
+        "a": "alert('Hello World');",
+        "b": "msgBox('Hello World');",
+        "c": "msg('Hello World');",
+        "d": "alertBox('Hello World');",
+    "correctAnswer": "a"
     
 }
 ];
-console.log(quizQuestions);
 
+var question1 = JSON.stringify(question);
+console.log(question1);
 
 var secondsLeft = 75;
 
@@ -55,3 +54,26 @@ function setTime() {
   }
 
 //setTime();
+
+
+  
+startButton.addEventListener("click", function(event) {
+   // document.querySelector("#start-button").addEventListener("click", function() {
+    document.getElementById("introPage").hidden = true;
+    document.getElementById("question").hidden = false;
+    setTime();
+
+}, false);
+
+var lastQuestionIndex = quizQuestions.length - 1;
+var questionIndex = 0;
+
+function displayQuestions() {
+    var questions = quizQuestions[questionIndex];
+    question.innerHTML = "<p>" + questions.quizQuestions; + "</p>";
+    a.innerHTML = questions.a;
+    b.innerHTML = questions.b;
+    c.innerHTML = questions.c;
+    d.innerHTML = questions.d;
+}
+displayQuestions();

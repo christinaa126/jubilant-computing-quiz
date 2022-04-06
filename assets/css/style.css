@@ -8,7 +8,7 @@
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
 }
-.title {
+#title {
     text-align: center;
     font-size: 60px;
     text-shadow: 2px 2px 2px rgba(73, 160, 120, 0.954);
@@ -25,14 +25,23 @@
 
 .container {
     display: flex;
-    justify-content: center;
+     justify-content: center;
     align-items: center;
     height: 100vh;
     padding: 40px;
-    margin: 0;
-    padding: 2rem;
+    margin: 0 auto;
+    padding: 2rem; 
+       
 
   }
+#question {
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
 
 .highScores {
   float: left;
@@ -72,14 +81,6 @@
     transition-duration: 0.15s;
     transition-property: background-color;
     transition-timing-function: linear;
-}
-
-.quiz-page {
-    display: hidden;
-}
-
-.hidden {
-    display: none;
 }
 
 
@@ -125,4 +126,6 @@ PIECES:
 - display high scores
 - display high scores in descending order by score
 - save high scores in local storage
-- get high scores from local storage */
+- get high scores from local storage 
+
+show first question when button is clicked by hiding content*/
