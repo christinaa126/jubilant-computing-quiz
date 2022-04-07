@@ -1,33 +1,36 @@
 var timeEl = document.querySelector(".timer");
 var startButton = document.querySelector(".start-button");
-
+var choiceA =document.getElementById('choiceA');
+var choiceB = document.getElementById('choiceB');
+var choiceC = document.getElementById('choiceC');
+var choiceD = document.getElementById('choiceD');
 
 
 var quizQuestions = [
     {
-    "question": "How do you create a timer?",
-        "a": "setTimer",
-        "b": "setTimeout",
-        "c": "setInterval",
-        "d": "setIntervalTime",
-    "correctAnswer": "c"
+    question: "How do you create a timer?",
+    a: "A. setTimer",
+    b: "B. setTimeout",
+    c: "C. setInterval",
+    d: "D. setIntervalTime",
+    correctAnswer: "C"
 
 },
 {
-    "question": "Where do you correctly insert your Javascript in the HTML document?",
-        "a": "header section",
-        "b": "body section",
-        "c": "main section",
-        "d": "under css link",
-    "correctAnswer": "b"
+    question: "Where do you correctly insert your Javascript in the HTML document?",
+    a: "A. header section",
+    b: "B. body section",
+    c: "C. main section",
+    d: "D. under css link",
+    correctAnswer: "B"
 },
 {
-    "question": "How do you write 'Hello World' in an alert box?",
-        "a": "alert('Hello World');",
-        "b": "msgBox('Hello World');",
-        "c": "msg('Hello World');",
-        "d": "alertBox('Hello World');",
-    "correctAnswer": "a"
+    question: "How do you write 'Hello World' in an alert box?",
+    a: "A. alert('Hello World');",
+    b: "B. msgBox('Hello World');",
+    c: "C. msg('Hello World');",
+    d: "D. alertBox('Hello World');",
+    correctAnswer: "A"
     
 }
 ];
@@ -44,10 +47,7 @@ function setTime() {
       timeEl.textContent = " Time left :" + secondsLeft;
   
       if(secondsLeft === 0) {
-        // Stops execution of action at set interval
         clearInterval(timerInterval);
-        // Calls function to create and append image
-        //displayWord();
       }
   
     }, 1000);
@@ -57,23 +57,37 @@ function setTime() {
 
 
   
-startButton.addEventListener("click", function(event) {
+startButton.addEventListener("click", function() {
    // document.querySelector("#start-button").addEventListener("click", function() {
     document.getElementById("introPage").hidden = true;
-    document.getElementById("question").hidden = false;
+    document.getElementById("questionContainer").hidden = false;
     setTime();
 
 }, false);
 
-var lastQuestionIndex = quizQuestions.length - 1;
-var questionIndex = 0;
+
 
 function displayQuestions() {
-    var questions = quizQuestions[questionIndex];
-    question.innerHTML = "<p>" + questions.quizQuestions; + "</p>";
-    a.innerHTML = questions.a;
-    b.innerHTML = questions.b;
-    c.innerHTML = questions.c;
-    d.innerHTML = questions.d;
+   // var questions = quizQuestions[questionIndex];
+    document.getElementById("question").innerHTML = "<p>" + quizQuestions[0].question; + "</p>";
+    choiceA.innerHTML =  "<p>" + quizQuestions[0].a; + "</p>";
+    choiceB.innerHTML =  "<p>" + quizQuestions[0].b; + "</p>";
+    choiceC.innerHTML =  "<p>" + quizQuestions[0].c; + "</p>";
+    choiceD.innerHTML =  "<p>" + quizQuestions[0].d; + "</p>";
+
 }
 displayQuestions();
+
+if(userAnswer === currentQuestion.correctAnswer){
+    // add to the number of correct answers
+    numCorrect++;
+  
+    // color the answers green
+    answerContainers[questionNumber].style.color = 'lightgreen';
+  }
+  // if answer is wrong or blank
+  else{
+    // color the answers red
+    answerContainers[questionNumber].style.color = 'red';
+  }
+  
